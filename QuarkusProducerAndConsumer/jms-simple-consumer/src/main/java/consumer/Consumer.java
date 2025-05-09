@@ -14,8 +14,6 @@ public class Consumer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        // Consumer for testqueue
-        //todo: check for documentation for custom endpoint or default
         from("jms:queue:testqueue")
                 .process(exchange -> {
                     // Extract headers and populate MDC
